@@ -14,12 +14,6 @@ sfSympalGallery:
       foreign: asset_id
       refClass: sfSympalGalleryAsset
       foreignAlias: Galleries
-    Slots:
-      class: sfSympalContentSlot
-      local: gallery_id
-      foreign: slot_id
-      refClass: sfSympalGallerySlot
-      foreignAlias: Galleries
 
 sfSympalGalleryAsset:
   actAs: [sfSympalContentTypeTemplate]
