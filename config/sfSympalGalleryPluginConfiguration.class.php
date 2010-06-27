@@ -17,30 +17,5 @@ class sfSympalGalleryPluginConfiguration extends sfPluginConfiguration
    */
   public function initialize()
   {
-    #$this->dispatcher->connect('sympal_content.filter_generator_yaml', array($this, 'addAssetsListToGeneratorYaml'));
-    #$this->dispatcher->connect('form.post_configure', array($this, 'changeAssetsListWidget'));
   }
-
-  public function addAssetsListToGeneratorYaml(sfEvent $event, $generator)
-  {
-    #$generator['generator']['param']['config']['form']['display']['Content'][] = 'slides_list';
-    
-    return $generator;
-  }
-/*
-  public function changeAssetsListWidget(sfEvent $event)
-  {
-    $form = $event->getSubject();
-
-    if (isset($form['slides_list']))
-    {
-      $widgetSchema = $form->getWidgetSchema();
-      $widgetSchema['slides_list'] = new sfWidgetFormTagString();
-
-      $validatorSchema = $form->getValidatorSchema();
-      $validatorSchema['slides_list'] = new sfValidatorTagString(array('required' => false));
-
-      $widgetSchema->setHelp('slides_list', 'Specify a comma separated list of assets that describe this content.');
-    }
-  }*/
 }

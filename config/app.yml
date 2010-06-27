@@ -27,5 +27,11 @@ all:
         class:      sfContentFilterGallery
         cache:      false
         options:    []
+
+  sympal_gallery:
+    asset_class: sfSympalAsset
+    gallery_renderers:
+      simple: sympal_gallery/view
+      ajax_slider: sympal_gallery/ajax_slider
       
       
