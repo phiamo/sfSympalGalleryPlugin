@@ -1,0 +1,8 @@
+# sfSympalGalleryPlugin install data fixtures
+sfSympalContentType:
+  content_type_gallery:
+    name: sfSympalGallery
+    slug: gallery
+    description: gallery content type
+    label: gallery content type
+    default_path: /gallery/:slug

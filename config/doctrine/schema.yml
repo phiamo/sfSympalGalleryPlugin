@@ -1,0 +1,47 @@
+---
+sfSympalGallery:
+  actAs: [sfSympalContentTypeTemplate]
+  columns:
+    title:
+      type: string(255)
+    thumb_width: integer(3)
+    thumb_height: integer(3)
+    renderer: string(255)
+  relations:
+    Assets:
+      class: sfSympalAsset
+      local: gallery_id
+      foreign: asset_id
+      refClass: sfSympalGalleryAsset
+      foreignAlias: Galleries
+    Slots:
+      class: sfSympalContentSlot
+      local: gallery_id
+      foreign: slot_id
+      refClass: sfSympalGallerySlot
+      foreignAlias: Galleries
+
+sfSympalGallerySlot:
+  actAs: [sfSympalRecordTemplate]
+  options:
+    symfony:
+      filter: false
+      form: false
+  columns:
+    gallery_id:
+      type: integer
+      primary: true
+    slot_id:
+      type: integer
+      primary: true
+  relations:
+    Gallery:
+      class: sfSympalGallery
+      local: gallery_id
+      onDelete: CASCADE
+      foreignAlias: GallerySlot
+    Slot:
+      class: sfSympalAsset
+      local: slot_id
+      onDelete: CASCADE
+      foreignAlias: GallerySlot    

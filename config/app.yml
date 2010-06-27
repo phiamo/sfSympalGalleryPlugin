@@ -1,0 +1,31 @@
+all:
+  sympal_config:
+    content_types:
+      sfSympalGallery:
+        content_templates:
+          default_view:
+            template:     sfSympalGallery/view
+    content_slot_types:
+      Gallery:
+        label: Gallery
+        form: sfSympalGallerySlotForm
+        form_renderer: sympal_gallery/slot_editor_form
+      #  widget_class: MySlotTypeWidget          default: sfWidgetFormSympalXXXXXXType
+      #  widget_options: []
+      #  validator_class: MySlotTypeValidator    default: sfValidatorFormSympalXXXXXXType
+      #  validator_options: []
+      #  transformers:    []
+        filters: [inline_object]
+      
+  inline_object:
+    types:
+      gallery:   sfSympalInlineObjectGallery
+      
+  content_filter:
+    filters:
+      gallery:
+        class:      sfContentFilterGallery
+        cache:      false
+        options:    []
+      
+      
