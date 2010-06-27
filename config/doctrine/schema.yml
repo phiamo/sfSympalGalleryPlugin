@@ -21,27 +21,27 @@ sfSympalGallery:
       refClass: sfSympalGallerySlot
       foreignAlias: Galleries
 
-sfSympalGallerySlot:
-  actAs: [sfSympalRecordTemplate]
-  options:
-    symfony:
-      filter: false
-      form: false
+sfSympalGalleryAsset:
+  actAs: [sfSympalContentTypeTemplate]
   columns:
+    title: string(255)
+    url: string(255)
     gallery_id:
       type: integer
       primary: true
-    slot_id:
+    asset_id:
       type: integer
       primary: true
   relations:
     Gallery:
+      type: one
       class: sfSympalGallery
       local: gallery_id
       onDelete: CASCADE
-      foreignAlias: GallerySlot
-    Slot:
+      foreignAlias: GalleryAsset
+    Asset:
+      type: one
       class: sfSympalAsset
-      local: slot_id
+      local: asset_id
       onDelete: CASCADE
-      foreignAlias: GallerySlot    
+      foreignAlias: GalleryAsset    
