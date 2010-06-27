@@ -9,14 +9,14 @@
 <?php else: ?>
   <?php echo $form['galleries_list'] ?>
   <a class="gallery_toggle_detail" href="#" onclick="return false;">Gallery parameters</a>
-  <div class="gallery_detail" style="display: none">
-  <?php echo $form['gallery_detail'] ?>
+  <div class="gallery_parameters" style="display: none">
+  <?php echo $form['gallery_parameters'] ?>
 
   </div>
 <?php endif; ?>
 <script type="text/javascript">
 $(function() {
-  $('.gallery_toggle_detail').click(function() {$('.gallery_detail').slideToggle();});		  
+  $('.gallery_toggle_detail').click(function() {$('.gallery_parameters').slideToggle();});		  
 });
 
 <?php if (sfSympalConfig::get('elastic_textareas', null, true)) :?>

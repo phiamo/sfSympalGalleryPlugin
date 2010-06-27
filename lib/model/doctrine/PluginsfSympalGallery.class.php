@@ -12,9 +12,10 @@
 abstract class PluginsfSympalGallery extends BasesfSympalGallery
 {
 	public function render($options){
-		$renderers = sfConfig::get('app_sympal_gallery_gallery_renderers');
-		$partial = $this->getRenderer()?$renderers[$this->getRenderer()]:'sympal_gallery/view';
-		return get_partial($partial, array('gallery'=>$this, 'options'=>$this->getOptions($options)));
+		$options = $this->getOptions($options);
+		#$renderers = sfConfig::get('app_sympal_gallery_gallery_renderers');
+		$partial = $options['renderer']?$options['renderer']:'sympal_gallery/view';
+		return get_partial($partial, array('gallery'=>$this, 'options'=>$options));
 	}
 	public function getOptions($options){
 	    $gValues = $this->toArray();
