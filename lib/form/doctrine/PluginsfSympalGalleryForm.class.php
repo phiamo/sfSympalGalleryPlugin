@@ -12,6 +12,7 @@ abstract class PluginsfSympalGalleryForm extends BasesfSympalGalleryForm
 	public function setup(){
 		parent::setup();
 		$this->widgetSchema['assets_list'] = new sfWidgetFormDoctrineChoice(array('model'=>'sfSympalAsset', 'renderer_class'=>'sfWidgetFormSelectDoubleList'));
+		$this->validatorSchama['assets_list'] = new sfValidatorDoctrineChoice(array('multiple'=>true, 'model'=>'sfSympalAsset'));
 	}
 
 	public function doUpdateObject($values){

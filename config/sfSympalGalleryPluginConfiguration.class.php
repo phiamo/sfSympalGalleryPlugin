@@ -23,24 +23,24 @@ class sfSympalGalleryPluginConfiguration extends sfPluginConfiguration
 
   public function addAssetsListToGeneratorYaml(sfEvent $event, $generator)
   {
-    #$generator['generator']['param']['config']['form']['display']['Content'][] = 'assets_list';
+    #$generator['generator']['param']['config']['form']['display']['Content'][] = 'slides_list';
     
     return $generator;
   }
-
+/*
   public function changeAssetsListWidget(sfEvent $event)
   {
     $form = $event->getSubject();
 
-    if (isset($form['assets_list']))
+    if (isset($form['slides_list']))
     {
       $widgetSchema = $form->getWidgetSchema();
-      $widgetSchema['assets_list'] = new sfWidgetFormTagString();
+      $widgetSchema['slides_list'] = new sfWidgetFormTagString();
 
       $validatorSchema = $form->getValidatorSchema();
-      $validatorSchema['assets_list'] = new sfValidatorTagString(array('required' => false));
+      $validatorSchema['slides_list'] = new sfValidatorTagString(array('required' => false));
 
-      $widgetSchema->setHelp('assets_list', 'Specify a comma separated list of assets that describe this content.');
+      $widgetSchema->setHelp('slides_list', 'Specify a comma separated list of assets that describe this content.');
     }
-  }
+  }*/
 }

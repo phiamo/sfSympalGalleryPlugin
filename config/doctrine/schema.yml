@@ -12,13 +12,14 @@ sfSympalGallery:
       class: sfSympalAsset
       local: gallery_id
       foreign: asset_id
-      refClass: sfSympalGalleryAsset
+      refClass: sfSympalGallerySlide
       foreignAlias: Galleries
 
-sfSympalGalleryAsset:
-  actAs: [sfSympalContentTypeTemplate]
+sfSympalGallerySlide:
+  actAs: [sfSympalRecordTemplate]
   columns:
     title: string(255)
+    link_file: boolean
     url: string(255)
     gallery_id:
       type: integer
@@ -32,10 +33,12 @@ sfSympalGalleryAsset:
       class: sfSympalGallery
       local: gallery_id
       onDelete: CASCADE
-      foreignAlias: GalleryAsset
+      foreignType: many
+      foreignAlias: GallerySlides
     Asset:
       type: one
       class: sfSympalAsset
       local: asset_id
       onDelete: CASCADE
-      foreignAlias: GalleryAsset    
+      foreignType: many
+      foreignAlias: GallerySlides
