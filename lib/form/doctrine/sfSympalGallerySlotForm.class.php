@@ -75,5 +75,4 @@ class sfSympalGallerySlotForm extends sfSympalContentSlotForm{
   	}
   	return '[gallery:'.$galleries[0].$params.']';
   }
-  }
 }
